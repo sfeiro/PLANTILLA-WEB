@@ -222,6 +222,7 @@ box-shadow: 0px 5px 10px 0px rgba(109, 66, 124, 0.5);
     z-index: 997;
     padding: 15px 0;
     position: fixed;
+    display: block;
   }
   
 }
@@ -355,6 +356,7 @@ box-shadow: 0px 5px 10px 0px rgba(109, 66, 124, 0.5);
   }
 .navbar {
 padding: 20px;
+display: block;
 }
 
   .navbar .dropdown .dropdown:hover>ul {
@@ -676,6 +678,10 @@ margin-bottom: 0px;
   text-align: center;
 }
 
+.features .col-lg-6 img {
+  width: 900px;
+}
+
 @media (max-width: 768px) {
   .features .feature-icons h3 {
     font-size: 28px;
@@ -685,27 +691,24 @@ margin-bottom: 0px;
   }
   .features .col-lg-6 {
     max-width: 70%; /* Puedes ajustar este valor según tus necesidades */
-    margin: 0 auto; /* Esto centra el contenido horizontalmente */
+    margin-right: auto;
+    padding-left: 160px;
   }
   .features p {
     font-size: 18px; /* Ajusta el tamaño de fuente según tus necesidades */
   }
-  .col-lg-6-t{
+  .features .col-lg-6-t{
     width: 80%;
+    padding-left: 40px;
     }
-    
-    .col-lg-6 {
-      display: flex; /* Activa el modelo de caja flexible */
-      align-items: center; /* Centra verticalmente los elementos dentro de la columna */
-      align-self: center;
-    }
-    
-    .col-lg-6 img {
-      width: 40%; /* La imagen ocupará el 70% del ancho de la columna */
-      max-width: 768px; /* No habrá una limitación máxima de ancho */
-      height: auto; /* Mantendrá la proporción de aspecto original */
-      margin: 0 auto; /* Esto centrará la imagen horizontalmente en el contenedor */
-    }
+
+.features .col-lg-6 {
+  width: 40%;
+  padding-right: 40px;
+}
+.features .col-lg-6 img {
+  width: 600px;
+}
 }
 
 .features .feature-icons .content .icon-box {
@@ -748,7 +751,14 @@ font-family: sans-serif;
 @media (max-width: 768px) {
   .service-box{
     align-items: center;
-  }}
+  }
+
+  .services .row.gy-4 [class*="col-"] {
+      width: 100% !important;
+    }
+   .services .col-md-3 {
+      width: 20px;}
+}
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
@@ -848,8 +858,33 @@ text-align: center;
 }
 
 @media (max-width: 768px) {
-  .box{
-    align-items: center;
+  .pricing {
+    background-image: url(../img/Plane-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 800px;
+  }
+  .pricing .row-pricing {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flujo a vertical */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding-top: 50px; /* Espaciado superior para separar del encabezado */
+  }
+
+  .pricing .col-lg-3 {
+    width: 60%; /* Asegura que las columnas ocupen todo el ancho disponible */
+    margin-bottom: 30px; /* Espaciado entre las "box" */
+  }
+
+  .pricing .box {
+    width: 100%; /* Asegura que las "box" ocupen todo el ancho disponible */
+    height: auto; /* Permitirá que la altura se ajuste automáticamente al contenido */
+  }
+  
+  /* Estilos adicionales para centrar los botones en dispositivos móviles */
+  .pricing .btn-buy {
+    margin: 10px auto; /* Centra horizontalmente los botones */
+    text-align: center; /* Centra el texto dentro de los botones */
   }
 }
 
@@ -867,12 +902,20 @@ text-align: center;
 @media (max-width: 768px) {
   .matias .col-lg-6-t{
     width: 80%;
+    text-align: left;
+    margin-right: auto;
+    padding-left: 40px;
     }
+
+    .matias .col-lg-6{
+      width: 80%;
+      padding-right: auto;
+      margin-left: 120px;
+      }
     
     .mobile-image {
-      width: 100%; /* Opcional: Establece el ancho completo de la imagen en la pantalla móvil */
+      width: 70%; /* Opcional: Establece el ancho completo de la imagen en la pantalla móvil */
       max-width: none; /* Opcional: Elimina la limitación máxima de ancho */
-      margin: 0 auto; /* Opcional: Centra la imagen horizontalmente en la pantalla móvil */
       display: block; /* Opcional: Asegura que la imagen sea un bloque en lugar de un elemento en línea */
     }
 
@@ -1060,13 +1103,6 @@ text-align: center;
   transform: scale(1.1);
 }
 
-.portfolio .portfolio-wrap:hover::before {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 1;
-}
 
 .portfolio .portfolio-wrap:hover .portfolio-info {
   opacity: 1;
@@ -1145,6 +1181,10 @@ text-align: center;
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+}
+
+.portfolio-wrap {
+  border-radius: 600px;
 }
 
 /*--------------------------------------------------------------
@@ -1469,8 +1509,23 @@ min-width:inherit;
 .footer .footer-top .footer-contact p {
   line-height: 26px;
 }
+
+@media (max-width: 768px) {
+  .footer .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+  }
+
+  .footer .col-lg-2 {
+    flex: 1;
+    max-width: none;
+  }
+}
+
+
 /*--------------------------------------------------------------
-# PAGINA DEL BOX
+# CONTENIDO WEB
 --------------------------------------------------------------*/
 .p1-content {
   background: url(../img/P1_contenido.png) top center no-repeat;
@@ -1479,7 +1534,71 @@ min-width:inherit;
   background-size: cover;
   min-height: 900px;
 }
+.p1-content .mobile-image {
+  width: 1200px;
+  padding-left: 200px;
+  padding-right: 220px;
+}
 
+@media (max-width: 678px) {
+  .p1-content {
+    background-image: url(../img/P1_contenido-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .p1-content .mobile-image {
+    max-width: 300px;
+    align-content: center;
+  }
+
+}
+
+/*--------------------------------------------------------------
+# REGALO
+--------------------------------------------------------------*/
+
+.Regalo .col-lg-6-t{
+  width: 30%;
+  margin-right: 250px;
+}
+
+.Regalo .col-lg-6{
+  width: 40%;
+}
+
+
+.Regalo p {
+  margin-bottom: 5px;
+  }
+
+@media (max-width: 768px) {
+  .Regalo .col-lg-6-t{
+    width: 50%;
+    margin-left: 40px;
+  }
+  .Regalo .col-lg-6{
+    width: 80%;
+    margin-left: 60px;
+  }
+
+  .Regalo .col-lg-6 img {
+    width: 500px;
+    margin-left: 150px;
+  }
+  }
+
+/*--------------------------------------------------------------
+# BANNER DESCUENTO
+--------------------------------------------------------------*/
+
+.box-mv .col-lg-6{
+    padding-left: 40px;
+  }
+  .box-mv .p {
+line-height: 2px;
+  }
 .descuento {
   background-image: url(../img/P1_banner.png);
   background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
@@ -1556,3 +1675,32 @@ min-width:inherit;
 
 .otros-planes .plan-box-1:hover {
 transform: scale(1.1);}
+
+.otros-planes .plan-box-1:hover {
+  background-color:#FEBF08;
+    }
+    .plan-box-1:hover h4,
+    .plan-box-1:hover p {
+      color: #ffffff; /* Cambia el color del texto a blanco en estado hover */
+    }
+
+@media (max-width: 768px) {
+  .otros-planes .col-md-4 {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .otros-planes .plan-box-1 {
+    width: 110%; /* Cambia el valor del ancho al porcentaje que desees (por ejemplo, 90%) */
+    max-width: none; /* Elimina la limitación máxima de ancho */
+    text-align: center;
+  }
+
+  .otros-planes .plan-box-1:hover {
+background-color:#FEBF08;
+  }
+  .plan-box-1:hover h4,
+  .plan-box-1:hover p {
+    color: #ffffff; /* Cambia el color del texto a blanco en estado hover */
+  }
+}
