@@ -1599,6 +1599,10 @@ min-width:inherit;
   .box-mv .p {
 line-height: 2px;
   }
+  .p1-content .p {
+    line-height: 2px;
+      }
+
 .descuento {
   background-image: url(../img/P1_banner.png);
   background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
