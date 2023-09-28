@@ -1540,21 +1540,14 @@ min-width:inherit;
   padding-right: 220px;
 }
 
-@media (max-width: 678px) {
-  .p1-content {
-    background-image: url(../img/P1_contenido-mobile.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .p1-content .mobile-image {
-    max-width: 300px;
-    align-content: center;
-  }
-
+@media (max-width: 768px) {
+.p1-content .mobile-image {
+  width: 600px; /* Ancho máximo del 100% en dispositivos móviles */
+  max-width: 100%; /* Ancho máximo del 100% para evitar que la imagen se corte */
+  padding-left: 10px;
+  padding-right: 10px;
 }
-
+}
 /*--------------------------------------------------------------
 # REGALO
 --------------------------------------------------------------*/
