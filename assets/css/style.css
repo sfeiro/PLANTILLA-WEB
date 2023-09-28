@@ -1541,11 +1541,16 @@ min-width:inherit;
 }
 
 @media (max-width: 768px) {
-.p1-content .mobile-image {
+.p1-content{
+  background-image: url(../img/P1_contenido-mobile.png);
+}
+
+  .p1-content .mobile-image {
   width: 600px; /* Ancho máximo del 100% en dispositivos móviles */
   max-width: 100%; /* Ancho máximo del 100% para evitar que la imagen se corte */
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 0px;
 }
 }
 /*--------------------------------------------------------------
